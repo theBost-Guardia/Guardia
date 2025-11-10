@@ -13,7 +13,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -22,7 +21,7 @@ body {
 
 .contenu-centre {
     background-color: rgba(0, 0, 0, 0.7);
-    padding: 250px 700px;
+    padding: 30px 50px;
     border-radius: 10px;
     border: 1px solid #444;
 }
@@ -30,4 +29,37 @@ body {
 h1 {
     margin-top: 0;
     color: #ffffff;
+}
+
+/* Optionnel : pour que l'image de profil ne soit pas trop grande */
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #f0f0f0;
+}
+
+
+/* --- NOUVEAUTÉS CI-DESSOUS --- */
+
+/* Style de l'icône dossier */
+#dossier-icone {
+    width: 50px; /* Ajustez la taille comme vous le souhaitez */
+    cursor: pointer; /* Montre que c'est cliquable */
+    margin-top: 15px;
+}
+
+/* Le paragraphe est caché par défaut */
+#description-cachee {
+    display: none;
+    margin-top: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 5px;
+}
+
+/* Classe que le JavaScript va ajouter/retirer */
+#description-cachee.visible {
+    display: block;
 }
