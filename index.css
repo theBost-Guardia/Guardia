@@ -24,42 +24,76 @@ body {
     padding: 30px 50px;
     border-radius: 10px;
     border: 1px solid #444;
+    overflow: hidden; 
+    width: clamp(300px, 80%, 600px); /* Ajout d'une largeur max pour le contenu */
 }
 
 h1 {
     margin-top: 0;
     color: #ffffff;
+    margin-bottom: 20px;
 }
 
-/* Optionnel : pour que l'image de profil ne soit pas trop grande */
+/* Nouvelle section pour l'en-tête du CV */
+.header-cv {
+    display: flex;
+    justify-content: space-between; /* Espace entre les infos et la PP */
+    align-items: center; /* Centre verticalement */
+    margin-bottom: 20px;
+}
+
+.info-personnelle {
+    text-align: left; /* Alignement du texte à gauche */
+    font-size: 1.5em;
+    font-weight: bold;
+    line-height: 1.2; /* Espacement entre prénom et nom */
+}
+
+.info-personnelle .pseudo {
+    margin-bottom: 0;
+}
+
+.info-personnelle .annee {
+    margin-top: 0;
+    color: #00bcd4; /* Exemple de couleur pour le nom */
+}
+
 .profile-pic {
-    width: 150px;
-    height: 150px;
+    width: 120px; /* Taille légèrement réduite pour l'intégration */
+    height: 120px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid #f0f0f0;
 }
 
+.guardia-info {
+    margin-top: 0;
+    margin-bottom: 25px; /* Plus d'espace avant le dossier */
+}
 
-/* --- NOUVEAUTÉS CI-DESSOUS --- */
-
-/* Style de l'icône dossier */
 #dossier-icone {
-    width: 50px; /* Ajustez la taille comme vous le souhaitez */
-    cursor: pointer; /* Montre que c'est cliquable */
+    width: 200px; /* Agrandie */
+    cursor: pointer;
     margin-top: 15px;
+    margin-bottom: 20px; /* Espace après le dossier et avant la description */
 }
 
-/* Le paragraphe est caché par défaut */
+/* --- MODIFICATIONS CI-DESSOUS POUR L'ANIMATION --- */
+
 #description-cachee {
-    display: none;
-    margin-top: 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-out, margin-top 0.7s ease-out, padding 0.7s ease-out; /* Transition un peu plus longue */
+    
     background-color: rgba(255, 255, 255, 0.1);
-    padding: 15px;
     border-radius: 5px;
+    padding: 0px 15px;
+    margin-top: 0px;
+    text-align: left; /* Aligne le texte de la description à gauche */
 }
 
-/* Classe que le JavaScript va ajouter/retirer */
 #description-cachee.visible {
-    display: block;
+    max-height: 500px; 
+    margin-top: 20px; 
+    padding: 15px; 
 }
